@@ -18,3 +18,23 @@
     </ul>
 </div>
 {% endblock %}
+<table>    
+                <tr>
+                    <th>id</th>
+                    <th>username</th>
+                    <th>email</th>
+                </tr>
+                 {% for auth in authors %}
+                        <tr>
+                            <td>{{auth.id}}</td>
+                            <td>{{auth.username}}</td>
+                            <td>{{auth.email}}</td>
+                            <td>
+                          <a href="{{ path('delete', {'id': auth.id}) }}">Delete</a> |
+                          <a href="{{ path('update_author', {'id': auth.id}) }}">Update</a>
+</td>
+
+                            </tr>
+                 {% endfor %}
+<table>                                 
+                                
